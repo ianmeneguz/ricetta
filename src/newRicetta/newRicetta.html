@@ -1,0 +1,33 @@
+<form class="notaForm" *ngIf="newRicettaSelected.titolo.length ==0">
+    <div class="form-group">
+        <label for="titolo">Titolo</label>
+        <input type="text" [(ngModel)]="ricetta.titolo" name="titolo" id="titolo">
+    </div>
+    <div class="form-group">
+        <label for="descrizione">Descrizione</label>
+        <input type="text" [(ngModel)]="ricetta.descrizione" name="descrizione" id="descrizione">
+    </div>
+    <div class="form-group">
+        <label for="durata">Tempo di preparazione</label>
+        <input type="text" [(ngModel)]="ricetta.durata" name="durata" id="durata">
+    </div>
+    <button  class="btn btn-success" (click)="saveRicetta()">SALVA</button>
+    <button class="btn btn-danger" (click)="cancelRicetta()">CANCELLA</button>
+</form>
+
+<form class="notaForm" *ngIf="newRicettaSelected.titolo.length >0">
+    <div class="form-group">
+        <label for="titolo">Titolo</label>
+        <input type="text" [(ngModel)]="newRicettaSelected.titolo" name="titolo" id="titolo">
+    </div>
+    <div class="form-group">
+        <label for="descrizione">Descrizione</label>
+        <input type="text" [(ngModel)]="newRicettaSelected.descrizione" name="descrizione" id="descrizione">
+    </div>
+    <div class="form-group">
+        <label for="durata">Tempo di preparazione</label>
+        <input type="text" [(ngModel)]="newRicettaSelected.durata" name="durata" id="durata">
+    </div>
+    <button  class="btn btn-success" (click)="updateSavedRicetta()">MODIFICA</button>
+    <button class="btn btn-danger" (click)="cancelSavedRicetta()">ELIMINA</button>
+</form>
